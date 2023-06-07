@@ -20,6 +20,7 @@ function getGoogleCredentials() {
 
 export const authOptions: NextAuthOptions = {
   adapter: UpstashRedisAdapter(redis),
+  secret: process.env.JWT_SECRET,
   session: {
     strategy: "jwt",
   },
